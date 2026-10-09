@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player de Música Simples - Aprendendo JS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+  <div class="w-full max-w-sm bg-[#252243] text-white rounded-3xl p-6 shadow-2xl">
+    
+    <div class="relative w-full aspect-square rounded-2xl overflow-hidden mb-6 shadow-md">
+      <img 
+        id="capa-album" 
+        src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=600&q=80" 
+        alt="Capa da Música" 
+        class="w-full h-full object-cover"
+      >
+      
+      <div id="badge-status" class="absolute top-3 left-3 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-2 text-xs font-semibold">
+        <span id="ponto-status" class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+        <span id="texto-status">Pausado</span>
+      </div>
+    </div>
+
+    <div class="text-center mb-6">
+      <h1 id="titulo-musica" class="text-2xl font-bold mb-1">Beautiful Things</h1>
+      <p id="nome-artista" class="text-sm text-slate-400">Benson Boone</p>
+    </div>
+
+    <div class="mb-6">
+      <input 
+        type="range" 
+        id="barra-progresso" 
+        min="0" 
+        max="100" 
+        value="0" 
+        class="w-full h-1.5 bg-slate-700 rounded-lg cursor-pointer"
+      >
+      <div class="flex justify-between text-xs text-slate-400 mt-2">
+        <span id="tempo-atual">0:00</span>
+        <span id="tempo-total">0:00</span>
+      </div>
+    </div>
+
+    <div class="flex items-center justify-center gap-8">
+      <button id="btn-voltar" class="text-slate-400 hover:text-white text-xl transition">
+        <i class="fa-solid font-bold fa-backward-step"></i>
+      </button>
+
+      <button id="btn-play" class="w-14 h-14 bg-[#7c5dfa] rounded-full flex items-center justify-center text-white text-xl btn-play-glow hover:scale-105 transition">
+        <i id="icone-play" class="fa-solid fa-play ml-1"></i>
+      </button>
+
+      <button id="btn-avancar" class="text-slate-400 hover:text-white text-xl transition">
+        <i class="fa-solid fa-forward-step"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <audio id="audio-player"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
